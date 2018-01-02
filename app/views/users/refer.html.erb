@@ -1,87 +1,277 @@
-<div class="header">
-  <div class="content">
-    <p class="logo brandon">Harry&#8217;s</p>
-    <p class="byline brandon">THANK YOU FOR SIGNING UP</p>
-  </div>
-</div>
-
-<div class="hero">
-  <div class="page-content clearfix">
-    <div class="mammoth">
-      <span class="need brandon">Shaving Is<br>Evolving</span>
+<div class="ho-referrals-page">
+    <div class="ho-logo">
+        <img src="assets/logo.png" alt="">
     </div>
-    <div class="share-wrap">
-      <p class="why brandon">Don't leave your friends behind</p>
-      <p class="title brandon">INVITE FRIENDS &<br>Earn Product</p>
-      <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn Harry's goods for<br>each friend who signs up.</p>
-      <div class="copy-link brandon"><%= root_url %>?ref=<%= @user.referral_code %></div>
-      <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
-      <div class="social-links">
-        <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
-        <div class="sep"></div>
-        <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
-      </div>
-    </div>
-  </div>
-</div>
 
-<%
-  referrals_count = @user.referrals.count
-
-  stops = User::REFERRAL_STEPS
-
-  found = nil
-
-  stops.reverse_each { |stop|
-    if stop["count"] <= referrals_count and !found
-      stop["selected"] = true
-      found = stop
-    else
-      stop["selected"] = false
-    end
-  }
-%>
-<div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
-  <div class="page-content">
-    <p class="callout brandon">Here's How It Works:</p>
-    <ul class="products clearfix">
-      <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">Harry's Product</p></li>
-      <% stops.each do |stop| %>
-        <li class="product brandon <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
-          <div class="circle"><%= stop["count"] %></div>
-          <div class="sep"></div>
-          <p><%= stop["html"].html_safe %></p>
-
-          <div class="tooltip">
-            <img src="<%= stop["image"] %>" height="254">
+    <div class="ho-container">
+        <div class="ho-banner">
+            <img src="assets/refer/img3.png" alt="">
+            <div class="ho-banner-content">
+                <div class="ho-row">
+                    <div class="ho-col ho-col-40">
+                        <div class="ho-title">
+                            <img src="assets/refer/ref-title.png" alt="">
+                        </div>
+                        <div class="ho-title-img">
+                            <img src="assets/refer/evolution.png" alt="">
+                        </div>
+                    </div>
+                    <div class="ho-col ho-col-60">
+                        <div class="ho-banner-info">
+                            <p class="ho-red-text">
+                                Don't leave your friends behind
+                            </p>
+                            <h3>
+                                INVITE FRIENDS &amp; EARN FREE PRODUCT
+                            </h3>
+                            <p class="ho-instructions">
+                                Share your unique link via email, Facebook or Twitter and earn
+                                Human Octane gear for each friend who signs up.
+                            </p>
+                            <div class="ho-form">
+                                <input type="text" disabled placeholder="Your link..." class="ho-email" value="<%= root_url %>?ref=<%= @user.referral_code %>"><!--
+                                --><button>COPY LINK</button>
+                                <div class="ho-socials">
+                                  
+                                  <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
+                                  
+                                  <span class="ho-social">
+                                    <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"><img src="assets/facebook.svg"></a>
+                                  </span>
+                                  <span class="ho-social">
+                                    <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"><img src="assets/twitter.svg"></a>
+                                  </span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!--/Banner-->
+        
+        <!--Timeline-->
+        <%
+          referrals_count = @user.referrals.count
+        
+          stops = User::REFERRAL_STEPS
+        
+          found = nil
+        
+          stops.reverse_each { |stop|
+            if stop["count"] <= referrals_count and !found
+              stop["selected"] = true
+              found = stop
+            else
+              stop["selected"] = false
+            end
+          }
+        %>
+        <div class="ho-referal-details <% if found %>prize-<%= found["class"] %><% end %>">
+          <div>
+            <p class="callout brandon">HERE'S HOW IT WORKS</p>
+            
+            <!-- Ho-progress mobile -->
+            <div class="ho-progress-mobile">
+              <div class="ho-progress-label">
+                <p>Friends joined</p>
+                <div class="progress">
+                  <div class="mover" style="width: 100%;"></div>
+                </div>
+                <p>Human Octane Product</p>
+              </div><!--
+              
+              --><div class="ho-progress-actual">
+                
+                <div class="ho-rewards">
+                  
+                  <% stops.each do |stop| %>
+                    <div class="ho-reward <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
+                      <div class="circle <%= 'achieved' if stop["count"] <= referrals_count %>"><%= stop["count"] %></div>
+                      <div class="tooltip">
+                        <img src="<%= stop["image"] %>" height="254">
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+                <%
+                  progress = 0
+                  
+                  if referrals_count >= 50
+                    progress = 100
+                  elsif referrals_count >= 25
+                    progress = 75
+                  elsif referrals_count >= 10
+                    progress = 50
+                  elsif referrals_count >= 5
+                    progress = 25
+                  elsif referrals_count > 0
+                    progress = 12
+                  end
+                %>
+            
+                <div class="progress">
+                  <div class="mover" style="height: <%= progress %>%;">
+                  </div>
+                </div>
+                
+                <div class="ho-reward-titles">
+                  
+                  <% stops.each do |stop| %>
+                      <p><%= stop["html"].html_safe %></p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            
+            <!-- /Ho-progress mobile -->
+            
+            <div class="ho-progress">
+              <div class="ho-progress-label">
+                <p>Friends joined</p>
+                <div class="progress">
+                  <div class="mover" style="width: 100%;"></div>
+                </div>
+                <p>Human Octane Product</p>
+              </div><!--
+              
+              --><div class="ho-progress-actual">
+                
+                <div class="ho-rewards">
+                  
+                  <% stops.each do |stop| %>
+                    <div class="ho-reward <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
+                      <div class="circle"><%= stop["count"] %></div>
+                      <div class="tooltip">
+                        <img src="<%= stop["image"] %>" height="254">
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+                <%
+                  progress = 0
+                  
+                  if referrals_count >= 50
+                    progress = 100
+                  elsif referrals_count >= 25
+                    progress = 75
+                  elsif referrals_count >= 10
+                    progress = 50
+                  elsif referrals_count >= 5
+                    progress = 25
+                  elsif referrals_count > 0
+                    progress = 12
+                  end
+                %>
+            
+                <div class="progress">
+                  <div class="mover" style="width: <%= progress %>%;">
+                  </div>
+                </div>
+                
+                <div class="ho-reward-titles">
+                  
+                  <% stops.each do |stop| %>
+                      <p><%= stop["html"].html_safe %></p>
+                  <% end %>
+                </div>
+              </div>
+              
+            </div>
+        
+            <%
+              words = ''
+              if referrals_count == 1
+                words = 'friend has'
+              else
+                words = 'friends have'
+              end
+            %>
+        
+            <% if referrals_count == 0 %>
+              <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
+            <% else %>
+              <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
+            <% end %>
+            <p class="check brandon">Keep checking</p>
+        
+            <p class="ship brandon">We ship to the U.S. (& Canada Soon)</p>
           </div>
-        </li>
-      <% end %>
-    </ul>
-
-    <div class="progress">
-      <div class="mover">
-        <div class="bar clearfix"></div>
+        </div>
+        <!--/Timeline-->
+    </div>
+    <!--/Container-->
+    
+    <!--Page footer-->
+    <div class="ho-footer">
+      <div class="ho-newsletter">
+        <div class="ho-container">
+          <h2 class="ho-title">Sign Up For Our Newsletter. Special Offers. Product Updates. Cool Shit.</h2>
+          <form class="ho-form">
+            <input type="email" placeholder="Enter your email address" class="ho-email"><!--
+            --><button>SUBSCRIBE</button>
+          </form>
+        </div>
+      </div>
+      <div class="ho-foot-main">
+        <div class="ho-container">
+          <div class="ho-row">
+            <div class="ho-col">
+              <ul class="ho-foot-nav">
+                <li>
+                  <a>Home</a>
+                </li>
+                <li>
+                  <a>Shop men</a>
+                </li>
+                <li>
+                  <a>Shop Women</a>
+                </li>
+                <li>
+                  <a>Podium Bounty</a>
+                </li>
+                <li>
+                  <a>Shipping and Returns</a>
+                </li>
+                <li>
+                  <a>Size Guide</a>
+                </li>
+                <li>
+                  <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+              </ul>
+              <div class="ho-socials">
+                <span class="ho-social">
+                  <img src="assets/facebook.svg"></img>
+                </span>
+                <span class="ho-social">
+                  <img src="assets/twitter.svg"></img>
+                </span>
+                <span class="ho-social">
+                  <img src="assets/instagram.svg"></img>
+                </span>
+              </div>
+            </div>
+            <div class="ho-col">
+              <div class="ho-logo">
+                <img src="assets/logo.png"></img>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ho-copyrights">
+        <div class="ho-container">
+          <div class="ho-row">
+            <div class="ho-col">
+              <span class="ho-copyrights-text">&copy;2016 Human Octane. All Rights Reserved.</span>
+            </div>
+            <div class="ho-col"></div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <%
-      words = ''
-      if referrals_count == 1
-        words = 'friend has'
-      else
-        words = 'friends have'
-      end
-    %>
-
-    <% if referrals_count == 0 %>
-      <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
-    <% else %>
-      <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
-    <% end %>
-    <p class="check brandon">Keep checking</p>
-
-    <p class="ship brandon">We ship to the U.S. (& Canada Soon)</p>
-    <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
-  </div>
+    <!--/Page footer-->
 </div>

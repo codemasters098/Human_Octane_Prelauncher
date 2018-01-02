@@ -20,7 +20,7 @@ html.home{
 }
 
 #home{
-	padding-bottom: 50px;
+	//padding-bottom: 50px;
 }
 
 #home .page-content{
@@ -672,16 +672,903 @@ only screen and (min-device-pixel-ratio: 2) {
 }
 
 
+// Human octane
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,700');
+
+body{
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ho-home-page{
+
+    height: 100vh;
+    //width: 100vw;
+    overflow: auto;
+    background-image: url('home/img1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    color: #ffffff;
+
+    .ho-logo{
+
+        text-align: center;
+        margin: 3.5% 0;
+
+        img{
+
+            height: 5em;
+        }
+    }
+
+    .ho-home-title{
+
+        text-align: center;
+        margin-top: 8.5%;
+
+        img{
+
+            max-width: 90%;
+        }
+    }
+
+    .ho-home-tagline{
+
+        text-align: center;
+        font-size: 1.2em;
+        margin-top: 1em;
+    }
+
+    .ho-form-title{
+
+        text-align: center;
+        font-size: 1.2em;
+        margin-top: 3em;
+        margin-bottom: 0.4em;
+    }
+}
+
+.ho-form{
+
+    display: block;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+
+    input.ho-email{
+
+        height: 3em;
+        line-height: 3em;
+        outline: none!important;
+        border: none;
+        padding: 0 1em;
+        width: 250px;
+        box-shadow: none;
+        border-radius: 0;
+        
+        &[disabled]{
+        	
+        	background-color: #ffffff;
+        	cursor: auto;
+        	color: #222222;
+        }
+        
+    }
+
+    button{
+
+        line-height: 3em;
+        height: 3em;
+        border: none;
+        outline: none;
+        vertical-align: middle;
+        padding: 0 2.5em;
+        margin-left: 1em;
+        background-color: #ff0000;
+        color: #ffffff;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}
 
 
 
+// Referrals page
+
+.ho-container{
+
+    padding: 0 10%;
+}
+
+.ho-row{
+
+    width: 100%;
+    height: 100%;
+    display: table;
+
+    .ho-col{
+
+        display: table-cell
+    }
+
+    .ho-col-40{
+
+        width: 40%;
+    }
+
+    .ho-col-60{
+
+        width: 60%;
+    }
+}
+
+.ho-referrals-page{
+
+    background-image: url('refer/bg1.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    margin: 0;
+    
+    .ho-logo{
+
+        padding: 3.5% 0;
+        text-align: center;
+
+        img{
+
+            height: 5em;
+        }
+    }
+
+    .ho-banner{
+
+        position: relative;
+
+        img{
+
+            max-width: 100%;
+        }
+
+        .ho-banner-content{
+
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+
+            .ho-row .ho-col{
+
+                vertical-align: middle;
+            }
+
+            .ho-title{
+
+                text-align: center;
+                margin-bottom: 1.5em;
+
+                img{
+
+                    max-width: 80%;
+                }
+            }
+
+            .ho-title-img{
+
+                text-align: center;
+
+                img{
+
+                    max-width: 80%;
+                }
+            }
+
+            .ho-banner-info{
+
+                .ho-red-text{
+
+                    color: #ff0000;
+                    text-align: center;
+                    line-height: 1.5em;
+                    font-size: 0.92em;
+                    font-weight: 500;
+                }
+
+                h3{
+
+                    color: #ffffff;
+                    text-align: center;
+                    font-size: 1.56em;
+                    font-weight: 400;
+                    margin: 0.6em 0 0.6em;
+                }
+
+                .ho-instructions{
+
+                    text-align: center;
+                    color: #ffffff;
+                    line-height: 1.5em;
+                    font-size: 0.92em;
+                    margin-bottom: 1.4em;
+                    opacity: 0.9;
+                    padding: 0 15%;
+                }
+            }
+        }
+    }
+    
+    // Referal details
+    .ho-referal-details{
+    	
+    	.callout.brandon{
+    		
+    		text-align: center;
+    		margin: 1em 0 2em;
+    	}
+    	
+    	.ho-progress-mobile{
+    		
+    		display: none;
+    	}
+    	
+    	.ho-progress{
+    		
+    		white-space: nowrap;
+    		line-height: 0em;
+    		
+    		.progress{
+    		
+	    		height: 0.5em;
+	    		background-color: #eeeeee;
+	    		margin: 0.75em 0;
+	    		
+	    		.mover{
+	    			
+	    			height: 100%;
+	    			background-color: #a5a5a5;
+	    		}
+	    	}
+	    	
+	    	.ho-progress-label{
+	    		
+	    		width: 20%;
+	    		display: inline-block;
+	    		line-height: 1em;
+	    		
+	    		p{
+	    			
+	    			font-size: 0.9em;
+	    			
+	    			&:first-child{
+	    				
+	    				font-style: italic;
+	    			}
+	    			
+	    			&:last-child{
+	    				
+	    				color: #ff0000;
+	    			}
+	    		}
+	    	}
+	    	
+	    	.ho-progress-actual{
+	    		
+	    		width: 80%;
+	    		display: inline-block;
+	    		vertical-align: bottom;
+	    		line-height: 1em;
+	    		
+	    		.ho-rewards{
+	    			
+	    			white-space: nowrap;
+	    			
+	    			.ho-reward{
+	    				
+	    				display: inline-block;
+	    				width: 25%;
+	    				text-align: center;
+	    				position: relative;
+	    				cursor: crosshair;
+	    				
+	    				.tooltip{
+	    					
+	    					display: none;
+	    					position: absolute;
+	    					bottom: 85%;
+	    					background-color: #ffffff;
+	    					box-shadow: rgba(0,0,0,0.3) 0px 3px 20px;
+	    					
+	    					img{
+	    						
+	    						border: 8px solid #ffffff;
+	    						max-width: 100%;
+	    						opacity: 0;
+	    						transition: all 0.3s;
+	    					}
+	    				}
+	    				
+	    				&:hover{
+	    					
+	    					.tooltip{
+	    						
+	    						display: block;
+	    						
+	    						img{
+	    							
+	    							opacity: 1;
+	    						}
+	    					}
+	    				}
+	    				
+	    				.circle{
+	    					
+	    					width: 2em;
+	    					text-align: center;
+	    					height: 2em;
+	    					line-height: 2em;
+	    					border-radius: 2em;
+	    					background-color: #ff0000;
+	    					color: #ffffff;
+	    					display: inline-block;
+	    					font-size: 0.9em;
+	    				}
+	    			}
+	    		}
+	    		
+	    		.ho-reward-titles{
+	    			
+	    			white-space: nowrap;
+	    			line-height: 1;
+	    			
+	    			p{
+	    				
+	    				display: inline-block;
+	    				width: 25%;
+	    				text-align: center;
+	    				font-size: 0.9em;
+	    			}
+	    		}
+	    	}
+    	} // /ho-progress
+    	
+    	.place.brandon{
+    		
+    		color: #ff0000;
+    		text-align: center;
+    		line-height: 1.5;
+    		margin-top: 3em;
+    		font-weight: 500;
+    		font-size: 0.9em;
+    	}
+    	
+    	.check.brandon{
+    		
+    		color: #444444;
+    		text-align: center;
+    		margin-top: 0.5em;
+    		font-size: 0.9em;
+    	}
+    	
+    	.ship.brandon{
+    		
+    		font-style: italic;
+    		text-align: center;
+    		font-size: 0.9em;
+    		margin-top: 2em;
+    	}
+    }
+    // /Referal details
+    
+    // ho-footer
+    .ho-footer{
+    	
+    	margin-top: 4em;
+    	
+    	.ho-newsletter{
+    		
+    		padding: 2.8em 0;
+    		background-color: #eaeaea;
+    		
+    		.ho-title{
+    			
+    			font-weight: 700;
+    			text-align: center;
+    			font-size: 1.8em;
+    			margin-bottom: 1em;
+    			padding: 0 18%;
+    		}
+    		
+    		.ho-form{
+    			
+    			button{
+    				
+    				margin: 0;
+    			}
+    		}
+    	}
+    	
+    	.ho-foot-main{
+    		
+    		background-color: #000000;
+    		padding: 2.5em 0 1.5em;
+    		
+    		.ho-col{
+    			
+    			vertical-align: middle;
+    		}
+    		
+    		.ho-foot-nav{
+    			
+    			list-style-type: none;
+    			padding: 0;
+    			margin: 0;
+    			
+    			li{
+    				
+    				display: inline-block;
+    				padding: 0 0.5em;
+    				font-size: 0.85em;
+    				
+    				&:first-child{
+    					
+    					padding-left: 0;
+    				}
+    				&:last-child{
+    					
+    					padding-right: 0;
+    				}
+    				
+    				a{
+    					
+    					color: #ffffff;
+    					opacity: 0.6;
+    					font-weight: 300;
+    				}
+    			}
+    		}
+    		
+    		.ho-logo{
+    			
+    			text-align: right;
+    			img{
+    				
+    				max-height: 4em;
+    			}
+    		}
+    	}
+    	
+    	.ho-copyrights{
+    		
+    		background-color: #131313;
+    		padding: 0.5em 0;
+    		color: #ffffff;
+    		
+    		.ho-copyrights-text{
+    			
+    			font-size: 0.8em;
+    			opacity: 0.6;
+    		}
+    	}
+    }
+    // /ho-footer
+}
+
+.ho-socials{
+	
+	margin: 0.4em 0;
+	text-align: left;
+	
+	.ho-social{
+		
+		display: inline-block;
+		width: 1.8em;
+		height: 1.8em;
+		line-height: 1.8em;
+		border-radius: 1.8em;
+		background-color: #ff0000;
+		margin-left: 0.3em;
+		text-align: center;
+		
+		&:first-child{
+			
+			margin: 0;
+		}
+		
+		img{
+			
+			max-height: 1em;
+			vertical-align: middle;
+		}
+	}
+}
 
 
 
+// HO responsive
 
+@media (min-width: 0px) and (max-width: 767px){
+	
+	.ho-home-page{
+		
+		display: table-cell;
+		vertical-align: middle;
+		width: 100vw;
+		padding: 0 8px;
+		background-color: #111111;
+		
+		.ho-home-title{
+			
+			img{
+				
+				max-width: 90%;
+			}
+		}
+		
+		.ho-home-tagline{
+			
+			text-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
+		}
+		
+		.ho-form-title{
+			
+			margin-top: 2em;
+			text-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
+		}
+	}
+	
+	.ho-form{
+		
+		input.ho-email{
+			
+			width: 90%;
+			box-sizing: border-box;
+			margin-bottom: 5px;
+		}
+		
+		button{
+			
+			width: 90%;
+			margin-left: 0;
+		}
+	}
+	
+	.ho-container{
+		
+		padding: 0 8px;
+	}
+	
+	.ho-row{
+		
+		display: block;
+		
+		.ho-col{
+			
+			display: block;
+		}
+		
+		.ho-col-40,.ho-col-60{
+			
+			width: 100%;
+		}
+	}
+	
+	.ho-referrals-page{
+		
+		padding-top: 2em;
+		background-position: center top;
+		background-size: auto 12%;
+		
+		.ho-logo{
+			
+			padding: 0;
+			//margin-bottom: 1.5em;
+			
+			img{
+				
+				height: 4em;
+			}
+		}
+		
+		.ho-banner{
+			
+			//background-image: url('refer/img3.png');
+			//background-size: cover cover;
+			padding: 2em 1em 1.5em;
+			//border-bottom: 1px dashed #dddddd;
+			margin-bottom: 3em;
+			box-shadow: rgba(0,0,0,0.15) 0px 24px 33px -20px;
+			
+			&>img{
+				
+				display: none;
+			}
+			
+			.ho-banner-content{
+				
+				position: static;
+				
+				.ho-title, .ho-title-img{
+					
+					display: none;
+				}
+				
+				.ho-banner-info{
+					
+					h3{
+						
+						color: #222222;
+						font-weight: 700;
+					}
+					
+					.ho-instructions{
+						
+						color: #222222;
+						opacity: 0.85;
+						margin-bottom: 2.5em;
+						font-size: 0.8em;
+					}
+				}
+				
+				.ho-form{
+					
+					width: 100%;
+					padding: 0 5%;
+					box-sizing: border-box;
+					
+					input.ho-email{
+						
+						border: 1px solid #cccccc;
+						border-bottom: none;
+						margin-bottom: 0;
+						width: 100%;
+					}
+					button{
+						
+						width: 100%;
+					}
+				}
+				
+				.ho-socials{
+					
+					text-align: right;
+				}
+			}
+		}
+		
+		.ho-referal-details{
+			
+			.callout.brandon{
+				
+				font-weight: 700;
+				margin-bottom: 3em;
+			}
+			
+			.ho-progress{
+				
+				display: none;
+			}
+			
+			.ho-progress-mobile{
+				
+				display: block;
+				
+				.ho-progress-label{
+					
+					display: table;
+					width: 100%;
+					
+					&>*{
+						
+						display: table-cell;
+						height: 5em;
+						vertical-align: top;
+						padding: 0 1em;
+						color: #ff0000;
+					}
+					
+					&>:first-child{
+						
+						width: 4em;
+						text-align: right;
+					}
+					
+					.progress{
+						
+						padding: 0;
+						width: 0.5em;
+						background-color: #eeeeee;
+						
+						.mover{
+							
+							height: 100%;
+							background-color: #ff0000;
+						}
+					}
+				}
+				.ho-progress-actual{
+					
+					display: table;
+					width: 100%;
+					
+					&>*{
+						
+						display: table-cell;
+						height: 5em;
+						line-height: 5em;
+						vertical-align: top;
+						padding: 0 1em;
+					}
+					
+					&>:first-child{
+						
+						width: 4em;
+						text-align: right;
+					}
+					
+					.progress{
+						
+						padding: 0;
+						width: 0.5em;
+						background-color: #eeeeee;
+						
+						.mover{
+							
+							background-color: #ff0000;
+						}
+					}
+					
+					.ho-rewards{
+						
+						.ho-reward{
+							
+							height: 5em;
+							position: relative;
+							
+							.tooltip{
+								
+								display: none;
+								position: absolute;
+								left: 85%;
+								top: -1em;
+								z-index: 99;
+								
+								img{
+									
+									border: 5px solid #ffffff;
+									box-shadow: rgba(0,0,0,0.3) 0px 0px 20px;
+								}
+							}
+							
+							.circle{
+								
+								width: 2em;
+								height: 2em;
+								display: inline-block;
+								border-radius: 2em;
+								border: 1px solid #ff0000;
+								line-height: 2em;
+								text-align: center;
+								color: #ff0000;
+								cursor: pointer;
+								
+								&.achieved, &:hover{
+									
+									background-color: #ff0000;
+									color: #ffffff;
+								}
+							}
+							
+							&:hover{
+								
+								.tooltip{
+									
+									display: block;
+								}
+							}
+						}
+					}
+					.ho-reward-titles{
+							
+						p{
+							
+							height: 5em;
+							line-height: 5em;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
+					}
+				}
+			}
+		}
+		
+		.ho-footer{
+			
+			.ho-newsletter{
+				
+				.ho-title{
+					
+					font-size: 1.4em;
+					font-weight: 300;
+					padding: 0;
+				}
+				
+				.ho-form{
+					
+					input.ho-email{
+						
+						margin-bottom: 0;
+					}
+				}
+			}
+			
+			.ho-foot-main{
+				
+				.ho-foot-nav{
+					
+					text-align: center;
+					
+					li{
+						
+						display: block;
+						padding: 0.4em 0;
+						text-transform: uppercase;
+						font-size: 0.75em;
+					}
+				}
+				
+				.ho-socials{
+					
+					padding: 1.5em 0 2em;
+					text-align: center;
+				}
+				
+				.ho-logo{
+					
+					text-align: center;
+					
+					img{
+						
+						max-height: 3.5em;
+					}
+				}
+			}
+			
+			.ho-copyrights{
+				
+				text-align: center;
+				
+				.ho-copyrights-text{
+					
+					//
+				}
+			}
+		}
+	}
+}
 
+// @media (min-width: 576px) and (max-width: 767px){
 
+// }
 
+@media (min-width: 768px) and (max-width: 991px){
+	
+	
+}
+
+@media (min-width: 992px) and (max-width: 1199){
+	
+	
+}
+
+@media (min-width: 1200px){
+	
+	
+}
 
 
 
