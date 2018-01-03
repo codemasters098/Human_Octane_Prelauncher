@@ -19,28 +19,28 @@ class User < ActiveRecord::Base
       'html' => 'Trucker Hat',
       'class' => 'two',
       'image' =>  ActionController::Base.helpers.asset_path(
-        'refer/cream-tooltip@2x.png')
+        'products/prod1.jpg')
     },
     {
       'count' => 10,
       'html' => 'Performance T-Shirt',
       'class' => 'three',
       'image' => ActionController::Base.helpers.asset_path(
-        'refer/truman@2x.png')
+        'products/prod2.jpg')
     },
     {
       'count' => 25,
       'html' => 'Compression Sleeves',
       'class' => 'four',
       'image' => ActionController::Base.helpers.asset_path(
-        'refer/winston@2x.png')
+        'products/prod3.jpg')
     },
     {
       'count' => 50,
       'html' => 'Elite Compression Sleeves',
       'class' => 'five',
       'image' => ActionController::Base.helpers.asset_path(
-        'refer/blade-explain@2x.png')
+        'products/prod4.jpg')
     }
   ]
 
