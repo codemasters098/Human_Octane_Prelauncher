@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
       'html' => 'Trucker Hat',
       'class' => 'two',
       'image' =>  ActionController::Base.helpers.asset_path(
-        'products/prod1.jpg')
+        '/assets/products/prod1.jpg')
     },
     {
       'count' => 10,
