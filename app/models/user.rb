@@ -26,21 +26,21 @@ class User < ActiveRecord::Base
       'html' => 'Performance T-Shirt',
       'class' => 'three',
       'image' => ActionController::Base.helpers.asset_path(
-        'products/prod2.jpg')
+        '/assets/products/prod2.jpg')
     },
     {
       'count' => 25,
       'html' => 'Compression Sleeves',
       'class' => 'four',
       'image' => ActionController::Base.helpers.asset_path(
-        'products/prod3.jpg')
+        '/assets/products/prod3.jpg')
     },
     {
       'count' => 50,
       'html' => 'Elite Compression Sleeves',
       'class' => 'five',
       'image' => ActionController::Base.helpers.asset_path(
-        'products/prod4.jpg')
+        '/assets/products/prod4.jpg')
     }
   ]
 
