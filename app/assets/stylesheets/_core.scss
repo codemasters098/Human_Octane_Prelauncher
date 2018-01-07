@@ -1136,6 +1136,12 @@ body{
     					color: #ffffff;
     					opacity: 0.6;
     					font-weight: 300;
+    					
+    					&:hover{
+    						
+    						color: #ff0000;
+    						text-shadow: #f00 0px 0px 0;
+    					}
     				}
     			}
     		}
