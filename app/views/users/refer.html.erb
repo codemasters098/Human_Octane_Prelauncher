@@ -33,10 +33,10 @@
                                 --><button>COPY LINK</button>
                                 <div class="ho-socials">
                                   
-                                  <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
+                                  <% twitter_message = "This company is offering a chance to earn free compression gear just by referring your friends to their site: " %>
                                   
                                   <span class="ho-social">
-                                    <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"><img src="assets/facebook.svg"></a>
+                                    <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Human Octane" class="fb" target="_blank"><img src="assets/facebook.svg"></a>
                                   </span>
                                   <span class="ho-social">
                                     <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"><img src="assets/twitter.svg"></a>
